@@ -1,0 +1,77 @@
+.mail-form {
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: calc(100% - 2rem);
+        display: block;
+        padding: 1rem;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+
+    textarea {
+        height: 10rem;
+        margin-bottom: 5rem;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    input[type="submit"] {
+        font-size: 1.6rem;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 3;
+        letter-spacing: 5px;
+        padding: 0;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        border-radius: 5px;
+        background: transparent;
+        color: $black;
+
+        &:hover {
+            background: transparent;
+            border-radius: 5px;
+        }    
+    }
+
+    .button1 {
+        position: relative;
+        width: 10rem;
+        z-index: 1;
+        border-radius: 5px;
+        border: 1px solid $black;
+        transition: .5s;
+        background: transparent;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: $gray;
+            transform-origin: 100% 50%;
+            transform: scaleX(0);
+            transition: transform ease .5s;
+        }
+
+        &:hover {
+            background-color: #fff;
+
+            &::before {
+                transform-origin: 0% 50%;
+                transform: scaleX(1);
+            }
+        }
+
+    }
+}

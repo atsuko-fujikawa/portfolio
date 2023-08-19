@@ -1,0 +1,88 @@
+.left-nav {
+    width: $side-width;
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 3px 0px 16px 0px rgba(98, 98, 98, 0.1);
+
+    @include sp {
+        display: none;
+    }
+
+    &__left {
+        height: 100%;
+        width: 3rem;
+        background-color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        small {
+            transform: rotate(-90deg);
+            display: block;
+            white-space: nowrap;
+            color: #fff;
+            letter-spacing: 5px;
+        }
+    }
+
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 0 1rem 2rem;
+        justify-content: space-between;
+
+    }
+
+    .nav-menu {
+        padding: 0 3rem;
+        font-size: 1.8rem;
+    
+        &__li {
+            .active::before {
+                background-color: $orange;
+                opacity: 1;
+            }
+        }
+    
+    }
+
+    .nav-link {
+        position: relative;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -2.6rem;
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            background-color: $gray;
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+            opacity: 0;
+            transition: .3s;
+        }
+    
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.git-link {
+    width: 3rem;
+    display: inline-block;
+    svg {
+        fill: $black;
+        transition: .3s;
+
+        &:hover {
+            fill: $orange;
+        }
+    }
+}

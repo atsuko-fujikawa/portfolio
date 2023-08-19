@@ -1,0 +1,114 @@
+// 変数
+$white: #fff;
+$black: #333;
+$orange: #fa7b14;
+$gray: #e0e0e0;
+
+$main-font: "游ゴシック体",
+"Yu Gothic",
+YuGothic,
+"ヒラギノ角ゴ Pro",
+"Hiragino Kaku Gothic Pro",
+"メイリオ",
+Meiryo,
+"MS Pゴシック",
+"MS PGothic",
+sans-serif;
+
+$bp: 750px;
+$max: 800px;
+$side-width: 19rem;
+
+@mixin sp {
+  @media (max-width:($bp)) {
+    @content;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: $black;
+  line-height: 1.8;
+
+  @include sp {
+    font-size: 1.4rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+
+// 共通ボタン
+
+.main-btn {
+  position: relative;
+  width: 10rem;
+  z-index: 1;
+  border-radius: 5px;
+  border: 1px solid $black;
+  transition: .5s;
+  background: transparent;
+  padding: 1.5rem;
+  margin-right: 1rem;
+
+  &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: $gray;
+      transform-origin: 100% 50%;
+      transform: scaleX(0);
+      transition: transform ease .5s;
+  }
+
+  &:hover {
+      background-color: #fff;
+
+      &::before {
+          transform-origin: 0% 50%;
+          transform: scaleX(1);
+      }
+  }
+
+
+}
+
+
+///////////// scssファイルの読み込み ///////////////
+@import "main", "side", "works", "contact","about","bottom";

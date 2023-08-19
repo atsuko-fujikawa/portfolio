@@ -1,0 +1,177 @@
+main {
+    width: calc(100vw - $side-width - 3rem);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include sp {
+        width: 100%;
+    }
+}
+
+.section-main {
+    margin: 3rem auto;
+    animation: fadein 2s forwards;
+}
+
+.section-title {
+    color: $gray;
+    font-size: 5rem;
+
+    @include sp {
+        margin-top: 0;
+    }
+}
+
+.section-wrap {
+    width: 60%;
+    margin: auto;
+    max-width: $max;
+
+    @include sp {
+        width: 90%;
+        margin-bottom: 80px;
+    }
+}
+
+@keyframes fadein {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
+.top-main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    @include sp {
+        height: calc(100vh - 100px);
+    }
+}
+
+.nav-menu {
+    &__li {
+        margin-bottom: 1rem;
+    }
+}
+
+#svg-portfolio {
+    width: 60%;
+    display: block;
+
+    @include sp {
+        width: 90%;
+    }
+
+}
+
+.top-h1 {
+    display: none;
+}
+
+// ロゴアニメーション
+
+@keyframes line-anim {
+    0% {
+        fill: transparent;
+        stroke-dashoffset: 800px;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+.line01 {
+    stroke: $black;
+    stroke-width: 1px;
+    stroke-dasharray: 800px;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    animation-fill-mode:both;
+    animation-timing-function:ease-in;
+    animation-name: line-anim;
+}
+@keyframes svg {
+    0% {
+        fill: transparent;
+        stroke-dashoffset: 800px;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+#svg-portfolio {
+    #pf {
+        stroke: $black;
+        stroke-width: 0.5px;
+        stroke-dasharray: 800px;
+    }
+}
+.pf01 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;    
+    animation-delay: 0s, 3s;
+
+}
+.pf02 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;    
+    animation-delay: 0.3s, 3s;
+}
+.pf03 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;    
+    animation-delay: 0.6s, 3s;
+}
+.pf04 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 0.9s, 3s;
+}
+.pf05 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 1.2s, 3s;
+}
+.pf06 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 1.5s, 3s;
+}
+.pf07 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 1.8s, 3s;
+}
+.pf08 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 2.1s, 3s;
+}
+.pf09 {
+    animation: svg 1.0s ease-in both, svg-color 2s ease-in both;
+    animation-delay: 2.5s, 3s;
+}
+@keyframes svg-color {
+    0% {
+        fill: transparent;
+    }
+    90% {
+        fill: $black;
+    }
+    100%{
+        fill: $black;
+    }   
+}
+
+#af {
+    overflow: hidden;
+    display: block;
+    animation: svg-down .5s ease-in both;
+    animation-delay: 3.5s;
+
+}
+
+@keyframes svg-down {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

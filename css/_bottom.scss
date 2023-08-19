@@ -1,0 +1,35 @@
+.bottom-nav {
+    display: none;
+
+    @include sp {
+        display: grid;
+        place-items: center;
+        width: 100vw;
+        height: 50px;
+        background-color: $black;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+    }
+
+    .nav-menu {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: #fff;
+            font-size: clamp(1.4rem, 3vw, 1.6rem);
+        }
+
+        &__li {
+            margin: 0;
+
+            .active {
+                color: $orange;
+            }
+        }
+    }
+}

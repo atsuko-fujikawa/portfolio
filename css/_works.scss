@@ -1,0 +1,118 @@
+
+
+.works {
+    display: none;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        border-bottom: 1px solid $black;
+
+        &:nth-of-type(1) {
+            border-top: 1px solid $black;
+            padding-top: 20px;
+        }
+
+        dt {
+            width: 20%;
+            padding: 1rem 0;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+
+            @include sp {
+                width: 100%;
+                margin: 0;
+                font-weight: bold;
+                padding-bottom: 0;
+            }
+        }
+
+        dd {
+            width: 74%;
+            padding: 1rem 0;
+            margin: 0 0 1rem 0;
+            display: flex;
+
+            @include sp {
+                width: 100%;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__link {
+        width: 2rem;
+        display: inline-block;
+        padding-left: 1rem;
+
+        svg {
+            transition: .3s;
+
+            &:hover {
+                fill: $orange;
+            }
+
+        }
+    }
+}
+
+.works-menu {
+
+    li {
+        border-radius: 5px;
+        border: 1px solid $black;
+        display: inline-block;
+        width: 10rem;
+        margin: 0 1rem 1rem 0;
+        position: relative;
+        z-index: 1;
+        transition: .5s;
+        background: transparent;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: $gray;
+            transform-origin: 100% 50%;
+            transform: scaleX(0);
+            transition: transform ease .5s;
+        }
+
+        &:not(.active):hover {
+            background-color: #fff;
+
+            &::before {
+                transform-origin: 0% 50%;
+                transform: scaleX(1);
+            }
+
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 3;
+        }
+    }
+
+    .active {
+        background-color: $black;
+
+        a {
+            color: #fff;
+            cursor: text;
+
+        }
+
+    }
+}
